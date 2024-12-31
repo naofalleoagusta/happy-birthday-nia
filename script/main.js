@@ -318,6 +318,8 @@ const animationTimeline = () => {
   const replyBtn = document.getElementById("replay");
   replyBtn.addEventListener("click", () => {
     tl.restart();
+    document.querySelector('.song').currentTime=0;
+    document.querySelector('.song').play();
   });
 };
 
