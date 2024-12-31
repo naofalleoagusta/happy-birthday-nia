@@ -9,12 +9,17 @@ body {
 
 .container {
   height: 100vh;
-  width: 100vh;
+  width: 100vw;
   margin: 0 auto;
   text-align: center;
   visibility: hidden;
   position: relative;
   overflow: hidden;
+}
+
+.container > div {
+  max-width: 100vw;
+  max-height: 100vh;
 }
 
 .container div.six {
@@ -58,7 +63,7 @@ body {
 }
 
 .four .text-box {
-  width: 600px;
+  width: 90%;
   margin: 0 auto;
   border: 3px solid #aaa;
   border-radius: 5px;
@@ -125,8 +130,9 @@ body {
 .six .hat {
   position: absolute;
   width: 80px;
-  top: -35px;
+  top: -60px;
   left: 41.5%;
+  transform: rotate(-45deg);
   /* transform: scale(0.1); */
 }
 
@@ -219,7 +225,8 @@ body {
 .wish h5 {
   font-weight: lighter;
   font-size: 2rem;
-  margin: 10px 0 0;
+  margin: 10px auto;
+  max-width: 800px;
 }
 
 .nine p {
@@ -232,28 +239,42 @@ body {
   cursor: pointer;
 }
 
-/* Media Queries */
-@media screen and (max-height: 1000px) {
+@media screen and (max-width: 1400px) {
   .six .hat {
-    left: 40%;
+    left: 34%;
   }
 }
 
-@media screen and (max-height: 800px) {
+
+@media screen and (max-width: 800px) {
   .six .hat {
-    left: 37%;
+    left: 28%;
   }
 }
 
-@media screen and (max-height: 700px) {
+
+@media screen and (max-width: 700px) {
   .six .hat {
-    left: 32%;
+    left: 27%;
   }
 }
 
-@media screen and (max-height: 850px) and (max-width: 450px) {
+
+@media screen and (max-width: 600px) {
   .six .hat {
-    left: 32%;
+    left: 25%;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .six .hat {
+    left: 20%;
+  }
+}
+
+@media screen and (max-width: 450px) {
+  .six .hat {
+    left: 10%;
   }
 }
 
@@ -280,8 +301,8 @@ body {
   }
 
   .six .hat {
-    width: 50px;
-    top: -20px;
+    width: 70px;
+    top: -50px;
   }
 
   .wish-hbd {

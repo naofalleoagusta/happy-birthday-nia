@@ -58,11 +58,11 @@ const animationTimeline = () => {
     .to(".container", 0.1, {
       visibility: "visible"
     })
-    .from(".one", 0.7, {
+    .from(".one", 1.5, {
       opacity: 0,
       y: 10
     })
-    .from(".two", 0.4, {
+    .from(".two", 1.5, {
       opacity: 0,
       y: 10
     })
@@ -223,7 +223,7 @@ const animationTimeline = () => {
     .from(".hat", 0.5, {
       x: -100,
       y: 350,
-      rotation: -180,
+      rotation: -40,
       opacity: 0
     })
     .staggerFrom(
@@ -304,3 +304,16 @@ const animationTimeline = () => {
 
 // Run fetch and animation in sequence
 fetchData();
+
+const audio = new Audio('../music/Sugar.mp4');
+
+// Play the audio
+audio.play();
+
+document.addEventListener('visibilitychange', () => {
+  if (document.hidden) {
+    audio.pause(); // Pause when the page is inactive
+  } else {
+    audio.play(); // Optionally resume when the page is active again
+  }
+});
