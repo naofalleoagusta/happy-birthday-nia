@@ -304,16 +304,3 @@ const animationTimeline = () => {
 
 // Run fetch and animation in sequence
 fetchData();
-
-const audio = new Audio('../music/Sugar.mp4');
-
-// Play the audio
-audio.play();
-
-document.addEventListener('visibilitychange', () => {
-  if (document.hidden) {
-    audio.pause(); // Pause when the page is inactive
-  } else {
-    audio.play(); // Optionally resume when the page is active again
-  }
-});
