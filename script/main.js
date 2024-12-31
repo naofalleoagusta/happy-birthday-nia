@@ -1,3 +1,22 @@
+window.addEventListener('load', () => {
+  Swal.fire({
+      title: 'Do you want to play music in the background?',
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonColor: '#3085d6',
+      cancelButtonColor: '#d33',
+      confirmButtonText: 'Yes',
+      cancelButtonText: 'No',
+  }).then((result) => {
+      if (result.isConfirmed) {
+          document.querySelector('.song').play();
+          fetchData();
+      } else {
+        fetchData();
+      }
+  });
+});
+
 // Import the data to customize and insert them into page
 const fetchData = () => {
   fetch("customize.json")
@@ -302,5 +321,11 @@ const animationTimeline = () => {
   });
 };
 
-// Run fetch and animation in sequence
-fetchData();
+
+document.addEventListener('visibilitychange', () => {
+  if (document.hidden) {
+    document.querySelector('.song').pause(); // Pause when the page is inactive
+  } else {
+    document.querySelector('.song').play(); // Optionally resume when the page is active again
+  }
+});
